@@ -41,35 +41,36 @@ function Login () {
         axios
             .post("http://challenge-react.alkemy.org", {email, password})
             .then(res => {
-                swAlert(<h2>Perfecto, ingresaste correctamente.</h2>)
+                swAlert(<h2>Welcome back</h2>)
                 // console.log(res.data);
                 const tokenRecibido = res.data.token;
-                sessionStorage.setItem("token", tokenRecibido)
+                localStorage.setItem("token", tokenRecibido)
                 navigate("/listado");
+
             })
             
     }
 
-    let token = sessionStorage.getItem("token");
+    let token = localStorage.getItem("token");
     
     return (
         <>
             {token && <Navigate to="/listado" />}
-            <h2>Formulario de Login</h2>
+            <h2>Login</h2>
             <form onSubmit={submitHandler}>
                 <label>
-                    <span>Correo Electrónico:</span><br/>
+                    <span>Email:</span><br/>
                     <input type="text" name="email" />    
                 </label>
                 
                 <br/>
                 <label>
-                    <span>Contraseña:</span><br/>
+                    <span>Password:</span><br/>
                     <input type="password" name="password" />
                 </label>
                 
                 <br/>
-                <button className="btn btn-success mt-2" type="submit">Ingresar</button>
+                <button className="btn btn-success mt-2" type="submit">Enter</button>
             </form>
         </>
     )

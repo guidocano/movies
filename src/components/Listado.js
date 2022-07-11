@@ -5,7 +5,7 @@ import swAlert from '@sweetalert/with-react';
 
 function Listado (props) {
 
-    let token = sessionStorage.getItem("token");
+    let token = localStorage.getItem("token");
 
     const [moviesList, setMoviesList] = useState([]);
 
@@ -25,11 +25,12 @@ function Listado (props) {
                 setMoviesList(apiData.results)
             })
             .catch(error => 
-                swAlert(<h2>Problemas técnicos! Intenta nuevamente más tarde.</h2>))
+                swAlert(<h2>Technical Difficulties. Try again later.</h2>))
     
     }, [setMoviesList]);
 
     // console.log(moviesList)
+    // console.log(props.favorites)
 
 
     return (
@@ -47,7 +48,9 @@ function Listado (props) {
                                 onClick={props.addRemoveFavs} 
                                 className="favourite-btn"
                                 data-movie-id={oneMovie.id}>
-                                🤍
+                                {
+                                    props.favorites.find(element => element.id == oneMovie.id ) ? <>❤️</>  : <>🤍</>
+                                }
                             </button>
                             
                             <div className="card-body">

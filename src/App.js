@@ -82,9 +82,9 @@ function App() {
       <div className="container mt-3">
         <Routes>
           <Route path="/" element={<Login/>}/>
-          <Route path="/listado" element={<Listado addRemoveFavs={addRemoveFavs}/>}/>
+          <Route path="/listado" element={<Listado favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/detalle" element={<Detalle/>}/>
-          <Route path="/resultados" element={<Resultados addRemoveFavs={addRemoveFavs}/>}/>
+          <Route path="/resultados" element={<Resultados favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/favoritos" element={<Favoritos favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
         </Routes>
       </div>

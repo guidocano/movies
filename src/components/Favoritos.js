@@ -2,15 +2,15 @@ import { Link, Navigate} from "react-router-dom";
 
 function Favoritos (props) {
 
-    let token = sessionStorage.getItem("token");
+    let token = localStorage.getItem("token");
 
 
     return (
         <> 
             {!token && <Navigate to="/" />}
-            <h2>Sección de Favoritos</h2>
+            <h2>Favorites</h2>
             <div className="row">
-            {!props.favorites.length && <div className="col-12 text-danger">No tenés nada en favoritos.</div>}
+            {!props.favorites.length && <div className="col-12">Here you can add your favorite movies.</div>}
                 {
                     props.favorites.map((oneMovie) => {
                         return(
@@ -21,7 +21,7 @@ function Favoritos (props) {
                                         onClick={props.addRemoveFavs} 
                                         className="favourite-btn"
                                         data-movie-id={oneMovie.id}>
-                                        🤍
+                                        ❤️
                                     </button>
                                     
                                     <div className="card-body">
