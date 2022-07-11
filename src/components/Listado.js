@@ -36,7 +36,8 @@ function Listado (props) {
     return (
         <>
         {!token && <Navigate to="/" />}
-
+        <h2>In Theaters</h2>
+        <br/>
         <div className="row">
         {
             moviesList.map((oneMovie) => {

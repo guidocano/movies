@@ -9,6 +9,7 @@ function Favoritos (props) {
         <> 
             {!token && <Navigate to="/" />}
             <h2>Favorites</h2>
+            <br/>
             <div className="row">
             {!props.favorites.length && <div className="col-12">Here you can add your favorite movies.</div>}
                 {

@@ -34,6 +34,7 @@ function Resultados (props) {
     return (
         <>
             <h2>Buscaste: <em>{keyword}</em></h2>
+            <br/>
             {moviesResults.length === 0 && <h3>No se encontraron resultados.</h3>}
             <div className="row">
                 {
