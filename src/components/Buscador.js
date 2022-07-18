@@ -1,5 +1,7 @@
 import swAlert from '@sweetalert/with-react';
 import {useNavigate} from "react-router-dom";
+// styles
+import "../css/header.css"
 
 function Buscador () {
     const navigate = useNavigate();

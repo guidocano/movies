@@ -3,5 +3,31 @@ nav {
 }
 
 .nav-link {
-    color: white
+    color: white;
 }
+
+.nav-link:hover {
+    color: white;
+    text-shadow: 1px 1px 5px white
+}
+
+
+.favorites {
+    color: rgb(197, 241, 176);
+    /* font-weight: bold; */
+    /* border: 1px white solid;
+    background-color: white;
+    border-radius: 45px; */
+    /* text-shadow: 1px 1px 5px white; */
+}
+
+.login, .logout{
+    color: rgb(224, 224, 224);
+    border: none;
+    background-color: #ab0535;
+}
+
+
+/* .button {
+    background-color: rgb(81, 187, 32);
+} */

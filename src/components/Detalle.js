@@ -2,7 +2,8 @@ import {useEffect, useState} from "react";
 import {Navigate} from "react-router-dom";
 import axios from "axios"
 
-function Detalle () {
+function Detalle (props) {
+    
     let token = localStorage.getItem("token")
 
     let query = new URLSearchParams(window.location.search);
@@ -30,21 +31,31 @@ function Detalle () {
     return (
         <>
             {!token && <Navigate to="/" />}
-            {!movie && <p>Cargando...</p>}
+            {!movie && <p>Loading...</p>}
             {movie && 
                 <>
-                    <h2>Título: {movie.title}</h2>
+                    <h2>Title: {movie.title}</h2>
                     <br />
                     <div className="row">
                         <div className="col-4">
-                        <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="img-fluid" alt="movie poster" />
+                            <div className="card">
+                            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="img-fluid" alt="movie poster" />
+                            <button 
+                                    onClick={props.addRemoveFavs} 
+                                    className="favourite-btn"
+                                    data-movie-id={movie.id}>
+                                    {
+                                        props.favorites.find(element => element.id == movie.id ) ? <>❤️</>  : <>🤍</>
+                                    }
+                            </button>
+                            </div>
                         </div>
                         <div className="col-8">
-                            <h5>Fecha de estreno: {movie.release_date}</h5>
-                            <h5>Reseña: </h5>
+                            <h5>Release Date: {movie.release_date}</h5>
+                            <h5>Overview: </h5>
                             <p>{movie.overview}</p>
                             <h5>Rating: {movie.vote_average}</h5>
-                            <h5>Géneros: </h5>
+                            <h5>Genres: </h5>
                             <ul>
                                 {movie.genres.map( oneGenre => <li key={oneGenre.id}>{oneGenre.name}</li>)}
                             </ul>

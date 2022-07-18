@@ -20,8 +20,7 @@ function Register () {
         if(email === "" || password === "") {
             swAlert(
                 <div>
-                    <h2>Los campos no pueden estar vacíos.</h2>
-                    <p>Texto texto texto texto 123</p>
+                    <h5>Fields cannot be empty.</h5>
                 </div>                
             )
             return;
@@ -30,7 +29,7 @@ function Register () {
         if(email !== "" && !regexEmail.test(email)) {
             swAlert(
                 <div>
-                    <h2>Debes escribir una dirección de correo válida.</h2>
+                    <h5>Please write a valid email adress.</h5>
                 </div>                
             )
             return;
@@ -43,13 +42,14 @@ function Register () {
             })
             .then(res => {
                 console.log(res)
-                swAlert(<h2>Registration succesfull!</h2>)
+                swAlert(<div><h3>Registration succesfull!</h3><h5>Please log in.</h5></div>)
                 // // console.log(res.data);
                 // const tokenRecibido = res.data.token;
                 // localStorage.setItem("token", tokenRecibido)
                 navigate("/");
 
             })
+            // .catch(swAlert(<div><h3>En error ocurred. Please try again.</h3></div>))
 
             
     }

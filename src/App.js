@@ -85,7 +85,7 @@ function App() {
           <Route path="/" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/listado" element={<Listado favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
-          <Route path="/detalle" element={<Detalle/>}/>
+          <Route path="/detalle" element={<Detalle favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/resultados" element={<Resultados favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/favoritos" element={<Favoritos favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
         </Routes>

@@ -20,8 +20,7 @@ function Login () {
         if(login === "" || password === "") {
             swAlert(
                 <div>
-                    <h2>Los campos no pueden estar vacíos.</h2>
-                    <p>Texto texto texto texto 123</p>
+                    <h5>Fields cannot be empty.</h5>
                 </div>                
             )
             return;
@@ -30,7 +29,7 @@ function Login () {
         if(login !== "" && !regexEmail.test(login)) {
             swAlert(
                 <div>
-                    <h2>Debes escribir una dirección de correo válida.</h2>
+                    <h5>Please write a valid email adress.</h5>
                 </div>                
             )
             return;
@@ -47,8 +46,8 @@ function Login () {
                 localStorage.setItem("token", tokenRecibido)
                 console.log(localStorage)
                 navigate("/listado");
-
             })
+            // .catch(swAlert(<div><h3>En error ocurred. Please try again.</h3></div>))
 
             
     }
@@ -91,7 +90,7 @@ function Login () {
                             <Link className="text-danger" to="/register">here.</Link>
                         </span> <br/>
                         <span>Or log in as a guest: </span><br/>
-                        <span>user: guest@cinema.com</span><br/>
+                        <span>user: guest@movie.com</span><br/>
                         <span>pass: guest</span>
                         </div>
             

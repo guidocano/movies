@@ -27,26 +27,29 @@ function Header (props) {
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 {!token &&
-                                    <Link className="nav-link" to="/">Login</Link>
+                                    <Link className="nav-link login" to="/">Login</Link>
                                 }
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/listado">In Theaters</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/favoritos">Favorites</Link>
-                            </li>
-                            <li className="nav-item d-flex align-items-center">
-                                <span className="text-success ">
+                                <Link className="nav-link" to="/favoritos">Favorites&nbsp;
+                                <span className="favorites">
                                     { token && <>({props.favorites.length})</> }
                                 </span>
+                                </Link>
+                                
+                            </li>
+                            <li className="nav-item d-flex align-items-center">
+
                             </li>
 
 
                         </ul>
                     </div>
                     { token && <>                            
-                        <Link className="nav-link" onClick={logOut} to="/">Log Out</Link> <span>&nbsp; |</span>
+                        <button className="nav-link logout" onClick={logOut}>Log Out</button> <span className="nav-link">&nbsp; |</span>
                     </> 
                     }
                     <div></div>
