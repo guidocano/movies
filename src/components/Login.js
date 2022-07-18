@@ -46,7 +46,6 @@ function Login () {
                 const tokenRecibido = res.data["user-token"]
                 localStorage.setItem("token", tokenRecibido)
                 console.log(localStorage)
-
                 navigate("/listado");
 
             })
