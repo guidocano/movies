@@ -1,9 +1,11 @@
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 import axios from "axios";
 import swAlert from '@sweetalert/with-react';
 
 function Resultados (props) {
+
+    const searchParams = useSearchParams()
 
     const token = localStorage.getItem("token")
 

@@ -15,7 +15,7 @@ function Buscador () {
             swAlert(<h5>Write Something.</h5>)
         } else {
             e.currentTarget.keyword.value = "";
-            navigate(`/resultados?keyword=${keyword}`);
+            navigate(`/resultados?keyword=${keyword}`, {replace: true});
             // navigate(0);
         }
     }
