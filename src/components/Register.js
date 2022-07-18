@@ -4,20 +4,20 @@ import {useNavigate, Navigate, Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
 import logo from "../assets/home.jpg"
 
-function Login () {
+function Register () {
 
     const navigate = useNavigate();
 
     const submitHandler = e => {
         e.preventDefault();
 
-        const login = e.target.email.value;
+        const email = e.target.email.value;
         const password = e.target.password.value;
 
         // eslint-disable-next-line no-useless-escape
         const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-        if(login === "" || password === "") {
+        if(email === "" || password === "") {
             swAlert(
                 <div>
                     <h2>Los campos no pueden estar vacíos.</h2>
@@ -27,7 +27,7 @@ function Login () {
             return;
         }
 
-        if(login !== "" && !regexEmail.test(login)) {
+        if(email !== "" && !regexEmail.test(email)) {
             swAlert(
                 <div>
                     <h2>Debes escribir una dirección de correo válida.</h2>
@@ -36,18 +36,18 @@ function Login () {
             return;
         }
 
-
         axios
-            .post("https://awaitedsong.backendless.app/api/users/login",  {
-                login ,
+            .post("https://awaitedsong.backendless.app/api/users/register", {
+                email ,
                 password,
             })
             .then(res => {
-                const tokenRecibido = res.data["user-token"]
-                localStorage.setItem("token", tokenRecibido)
-                console.log(localStorage)
-
-                navigate("/listado");
+                console.log(res)
+                swAlert(<h2>Registration succesfull!</h2>)
+                // // console.log(res.data);
+                // const tokenRecibido = res.data.token;
+                // localStorage.setItem("token", tokenRecibido)
+                navigate("/");
 
             })
 
@@ -56,6 +56,8 @@ function Login () {
 
     let token = localStorage.getItem("token");
     
+
+
     return (
         
         <div className="container">
@@ -70,36 +72,33 @@ function Login () {
                 </div>
 
                 <div className="col-4">
-                    <h2>Login</h2>
-
-                        <form onSubmit={submitHandler}>
-                            <label>
-                                <span>Email:</span><br/>
-                                <input type="text" name="email" />    
-                            </label>
-                            
-                            <br/>
-                            <label>
-                                <span>Password:</span><br/>
-                                <input type="password" name="password" />
-                            </label>
-                            
-                            <br/>
-                            <button className="btn btn-success mt-2" type="submit">Enter</button>
-                        </form>
+                    <h2>Register</h2>
+                    <form onSubmit={submitHandler}>
+                        <label>
+                            <span>Email:</span><br/>
+                            <input type="text" name="email" />    
+                        </label>
+                        
                         <br/>
-                        <span>You can register&nbsp;
-                            <Link className="text-danger" to="/register">here.</Link>
-                        </span> <br/>
-                        <span>Or log in as a guest: </span><br/>
-                        <span>user: guest@cinema.com</span><br/>
-                        <span>pass: guest</span>
-                        </div>
-            
+                        <label>
+                            <span>Password:</span><br/>
+                            <input type="password" name="password" />
+                        </label>
+                        
+                        <br/>
+                        <button className="btn btn-success mt-2" type="submit">Enter</button>
+                    </form>
+
+                    <br/>
+                    <span>
+                        Already have an user? Log in&nbsp;<Link className="text-danger" to="/">here.</Link>
+                    </span>
+                    <br/><br/>
+                </div>
             </div>
         </div>
 
     )
 }
 
-export default Login
+export default Register

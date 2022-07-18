@@ -2,6 +2,8 @@ import {Link, useNavigate} from "react-router-dom";
 
 // components
 import Buscador from "./Buscador";
+// styles
+import "../css/header.css"
 
 
 function Header (props) {
@@ -19,12 +21,14 @@ function Header (props) {
 
     return (
         <header>
-            <nav className="navbar navbar-expand-lg bg-light">
+            <nav className="navbar navbar-expand-lg ">
                 <div className="container-fluid">
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
+                                {!token &&
+                                    <Link className="nav-link" to="/">Login</Link>
+                                }
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/listado">In Theaters</Link>
@@ -42,7 +46,7 @@ function Header (props) {
                         </ul>
                     </div>
                     { token && <>                            
-                        <Link className="nav-link text-danger" onClick={logOut} to="/">Log Out</Link> <span>&nbsp; |</span>
+                        <Link className="nav-link" onClick={logOut} to="/">Log Out</Link> <span>&nbsp; |</span>
                     </> 
                     }
                     <div></div>
