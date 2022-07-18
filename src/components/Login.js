@@ -68,7 +68,7 @@ function Login () {
                 </div>
 
                 <div className="col-4">
-                    <h2>Loginss</h2>
+                    <h2>Login</h2>
 
                         <form onSubmit={submitHandler}>
                             <label>
