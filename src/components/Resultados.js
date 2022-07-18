@@ -23,7 +23,7 @@ function Resultados (props) {
             .then(response => {
                 const moviesArray = response.data.results;
                 if (moviesArray.length === 0) {
-                    swAlert(<h4>Tu búsqueda no arrojó resultados.</h4>)
+                    swAlert(<h4>No results.</h4>)
                 }
                 setMoviesResults(moviesArray);
             })
@@ -37,7 +37,7 @@ function Resultados (props) {
         <>
             <h2>Buscaste: <em>{keyword}</em></h2>
             <br/>
-            {moviesResults.length === 0 && <h3>No se encontraron resultados.</h3>}
+            {moviesResults.length === 0 && <h3>No results found.</h3>}
             <div className="row">
                 {
                     moviesResults.map((oneMovie) => {
