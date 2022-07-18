@@ -16,7 +16,7 @@ function Buscador () {
         } else {
             e.currentTarget.keyword.value = "";
             navigate(`/resultados?keyword=${keyword}`);
-            navigate(0);
+            // navigate(0);
         }
     }
 

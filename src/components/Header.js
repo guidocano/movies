@@ -15,7 +15,8 @@ function Header (props) {
 
     const logOut = () => {
         localStorage.removeItem("token");
-        navigate(0);
+        navigate("/")
+        // navigate(0);
     }
 
 
