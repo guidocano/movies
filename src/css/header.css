@@ -11,6 +11,11 @@ nav {
     text-shadow: 1px 1px 5px white
 }
 
+.logo-header {
+    width: 80px;
+    margin-right: 15px;
+}
+
 
 .favorites {
     color: rgb(197, 241, 176);

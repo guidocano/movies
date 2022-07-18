@@ -12,9 +12,7 @@ function Buscador () {
         // console.log(keyword)
 
         if(keyword.length === 0) {
-            swAlert(<h5>Tienes que escribir una palabra.</h5>)
-        } else if (keyword.length < 2) {
-            swAlert(<h5>Tienes que escribir más de 1 caracter.</h5>)
+            swAlert(<h5>Write Something.</h5>)
         } else {
             e.currentTarget.keyword.value = "";
             navigate(`/resultados?keyword=${keyword}`);

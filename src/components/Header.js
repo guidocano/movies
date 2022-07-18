@@ -2,6 +2,7 @@ import {Link, useNavigate} from "react-router-dom";
 
 // components
 import Buscador from "./Buscador";
+import logos from "../assets/logo3.jpg"
 // styles
 import "../css/header.css"
 
@@ -25,6 +26,7 @@ function Header (props) {
                 <div className="container-fluid">
                     <div className="collapse navbar-collapse">
                         <ul className="navbar-nav">
+                            <img src={logos} className="logo-header" alt="home logo" />   
                             <li className="nav-item">
                                 {!token &&
                                     <Link className="nav-link login" to="/">Login</Link>

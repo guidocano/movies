@@ -4,6 +4,7 @@ import {useNavigate, Navigate, Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
 import logo from "../assets/home.jpg"
 
+
 function Register () {
 
     const navigate = useNavigate();
