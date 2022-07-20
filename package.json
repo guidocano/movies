@@ -2,7 +2,7 @@
   "name": "alkemy-challenge",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://guidocano.github.io/movies/", 
+  "homepage": "https://guidocano.github.io/movies/",
   "dependencies": {
     "@sweetalert/with-react": "^0.1.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -15,6 +15,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.4.23",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import swAlert from '@sweetalert/with-react';
+import Swal from 'sweetalert2'
 import {useNavigate, Navigate, Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
 import logo from "../assets/home.jpg"
@@ -18,20 +18,18 @@ function Login () {
         const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
         if(login === "" || password === "") {
-            swAlert(
-                <div>
-                    <h5>Fields cannot be empty.</h5>
-                </div>                
-            )
+            Swal.fire({
+                title:'Fields cannot be empty',
+                confirmButtonColor: '#3085d6',
+            })
             return;
         }
 
         if(login !== "" && !regexEmail.test(login)) {
-            swAlert(
-                <div>
-                    <h5>Please write a valid email adress.</h5>
-                </div>                
-            )
+            Swal.fire({
+                title:'Please write a valid email adress.',
+                confirmButtonColor: '#3085d6',
+            })
             return;
         }
 
@@ -46,6 +44,13 @@ function Login () {
                 localStorage.setItem("token", tokenRecibido)
                 console.log(localStorage)
                 navigate("/listado");
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Welcome back.',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
             })
             // .catch(swAlert(<div><h3>En error ocurred. Please try again.</h3></div>))
 

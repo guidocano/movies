@@ -1,4 +1,5 @@
 import {Link, useNavigate} from "react-router-dom";
+import Swal from 'sweetalert2'
 
 // components
 import Buscador from "./Buscador";
@@ -16,6 +17,13 @@ function Header (props) {
     const logOut = () => {
         localStorage.removeItem("token");
         navigate("/")
+        Swal.fire({
+            position: 'top-end',
+            icon: 'info',
+            title: 'Logged out.',
+            showConfirmButton: false,
+            timer: 1500
+          })
         // navigate(0);
     }
 

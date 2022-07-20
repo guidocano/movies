@@ -1,5 +1,5 @@
 import axios from "axios";
-import swAlert from '@sweetalert/with-react';
+import Swal from 'sweetalert2'
 import {useNavigate, Navigate, Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
 import logo from "../assets/home.jpg"
@@ -19,20 +19,18 @@ function Register () {
         const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
         if(email === "" || password === "") {
-            swAlert(
-                <div>
-                    <h5>Fields cannot be empty.</h5>
-                </div>                
-            )
+            Swal.fire({
+                title:'Fields cannot be empty',
+                confirmButtonColor: '#3085d6',
+            })
             return;
         }
 
         if(email !== "" && !regexEmail.test(email)) {
-            swAlert(
-                <div>
-                    <h5>Please write a valid email adress.</h5>
-                </div>                
-            )
+            Swal.fire({
+                title:'Please write a valid email adress.',
+                confirmButtonColor: '#3085d6',
+            })
             return;
         }
 
@@ -43,7 +41,11 @@ function Register () {
             })
             .then(res => {
                 console.log(res)
-                swAlert(<div><h3>Registration succesfull!</h3><h5>Please log in.</h5></div>)
+                Swal.fire({
+                    title:'Registration successful!',
+                    text: 'Please log in.',
+                    confirmButtonColor: '#3085d6',
+                })
                 // // console.log(res.data);
                 // const tokenRecibido = res.data.token;
                 // localStorage.setItem("token", tokenRecibido)

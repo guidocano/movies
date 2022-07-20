@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Link, useSearchParams} from "react-router-dom";
 import axios from "axios";
-import swAlert from '@sweetalert/with-react';
+import Swal from 'sweetalert2'
 
 function Resultados (props) {
 
@@ -23,7 +23,9 @@ function Resultados (props) {
             .then(response => {
                 const moviesArray = response.data.results;
                 if (moviesArray.length === 0) {
-                    swAlert(<h4>No results.</h4>)
+                    Swal.fire({
+                        title:'No results.',
+                    })
                 }
                 setMoviesResults(moviesArray);
             })

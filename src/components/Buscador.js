@@ -1,4 +1,4 @@
-import swAlert from '@sweetalert/with-react';
+import Swal from 'sweetalert2'
 import {useNavigate} from "react-router-dom";
 // styles
 import "../css/header.css"
@@ -12,7 +12,11 @@ function Buscador () {
         // console.log(keyword)
 
         if(keyword.length === 0) {
-            swAlert(<h5>Write Something.</h5>)
+            Swal.fire({
+                title:'Write Something',
+                confirmButtonColor: '#3085d6',
+            })
+
         } else {
             e.currentTarget.keyword.value = "";
             navigate(`/resultados?keyword=${keyword}`, {replace: true});
@@ -26,7 +30,7 @@ function Buscador () {
                 <input className="form-control" type="text" name="keyword" placeholder="Movie Title..."/>    
             </label>
 
-            <button className="btn btn-success" type="submit">Search</button>
+            <button className="btn btn-outline-light" type="submit">Search</button>
         </form>
     )
 }
