@@ -14,6 +14,7 @@ function Register () {
 
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const name = e.target.name.value;
 
         // eslint-disable-next-line no-useless-escape
         const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -36,6 +37,7 @@ function Register () {
 
         axios
             .post("https://awaitedsong.backendless.app/api/users/register", {
+                name,
                 email ,
                 password,
             })
@@ -49,7 +51,7 @@ function Register () {
                 // // console.log(res.data);
                 // const tokenRecibido = res.data.token;
                 // localStorage.setItem("token", tokenRecibido)
-                navigate("/");
+                navigate("/login");
 
             })
             // .catch(swAlert(<div><h3>En error ocurred. Please try again.</h3></div>))
@@ -68,15 +70,21 @@ function Register () {
             <div className="row align-items-center justify-content-evenly">
                 
                 
-                <div className="col-6">
+                <div className="col-6 users-logo">
                     <Link to="/">
                         <img style={{maxWidth: "35vw"}} src={logo} alt="home logo" />    
                     </Link>
                 </div>
 
-                <div className="col-4">
+                <div className="col-4 users-form">
                     <h2>Register</h2>
                     <form onSubmit={submitHandler}>
+
+                        <label>
+                            <span>Name:</span><br/>
+                            <input type="text" name="name" />    
+                        </label>
+
                         <label>
                             <span>Email:</span><br/>
                             <input type="text" name="email" />    

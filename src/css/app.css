@@ -1,3 +1,4 @@
+
 .favourite-btn {
     width: 30px;
     height: 30px;
@@ -22,4 +23,27 @@
 
 .movie-card{
     margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .users-logo{
+        display: none;
+    }
+
+    .users-form{
+        width: 50%;
+        margin: 0px auto 200px auto;
+        padding-left: 0;
+    }
+
+    .movie-card {
+        width: 50%;
+    }
+
+    .favs-card{
+        width: 50%;
+    }
+
 }

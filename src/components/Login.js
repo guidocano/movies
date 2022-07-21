@@ -41,14 +41,17 @@ function Login () {
             })
             .then(res => {
                 const tokenRecibido = res.data["user-token"]
+                const nameRecibido = res.data.name
                 localStorage.setItem("token", tokenRecibido)
-                console.log(localStorage)
+                localStorage.setItem("name", nameRecibido)
                 Swal.fire({
                     position: 'top',
                     icon: 'success',
                     title: 'Welcome back.',
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 1400,
+                    width: '300px',
+                    toast: true
                   })
                 navigate("/listado");
                 
@@ -67,13 +70,13 @@ function Login () {
             <div className="row align-items-center justify-content-evenly">
                 
                 
-                <div className="col-6">
+                <div className="col-6 users-logo">
                     <Link to="/">
                         <img style={{maxWidth: "35vw"}} src={logo} alt="home logo" />    
                     </Link>
                 </div>
 
-                <div className="col-4">
+                <div className="col-4 users-form">
                     <h2>Login</h2>
 
                         <form onSubmit={submitHandler}>

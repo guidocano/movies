@@ -35,7 +35,7 @@ function Listado (props) {
 
     return (
         <>
-        {!token && <Navigate to="/" />}
+        {!token && <Navigate to="/login" />}
         <h2>In Theaters</h2>
         <br/>
         <div className="row">

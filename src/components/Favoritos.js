@@ -7,7 +7,7 @@ function Favoritos (props) {
 
     return (
         <> 
-            {!token && <Navigate to="/" />}
+            {!token && <Navigate to="/login" />}
             <h2>Favorites</h2>
             <br/>
             <div className="row">
@@ -15,7 +15,7 @@ function Favoritos (props) {
                 {
                     props.favorites.map((oneMovie) => {
                         return(
-                            <div className="col-3" key={oneMovie.id}>
+                            <div className="col-3 favs-card" key={oneMovie.id}>
                                 <div className="card">
                                     <img src={oneMovie.imgUrl} className="card-img-top" alt="movie poster" />
                                     <button 

@@ -16,15 +16,17 @@ function Header (props) {
 
     const logOut = () => {
         localStorage.removeItem("token");
-        
+        navigate("/")
+        navigate(0)
         Swal.fire({
             position: 'top',
             icon: 'info',
             title: 'Logged out.',
             showConfirmButton: false,
-            timer: 1500
+            timer: 1400,
+            width: '300px',
+            toast: true
           })
-        navigate("/")
         // navigate(0);
     }
 
@@ -36,11 +38,14 @@ function Header (props) {
                 <ul>
                      
                     <li>
-                        <img src={logos} className="logo-header" alt="home logo" />  
+                        <Link to="/">
+                            <img src={logos} className="logo-header" alt="home logo" />  
+                        </Link>
+                        
                     </li>
                     <li>
                         {!token &&
-                            <Link className="login" to="/">Login</Link>
+                            <Link className="login" to="/login">Login</Link>
                         }
                     </li>
                     <li>

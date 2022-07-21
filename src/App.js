@@ -4,6 +4,7 @@ import {useState, useEffect} from "react";
 import {Routes, Route} from "react-router-dom";
 
 // Components
+import Home from "./components/Home";
 import Listado from "./components/Listado"
 import Detalle from "./components/Detalle"
 import Favoritos from "./components/Favoritos"
@@ -82,7 +83,8 @@ function App() {
       <Header favorites={favorites}/>
       <div className="container mt-3">
         <Routes>
-          <Route path="/" element={<Login/>}/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/listado" element={<Listado favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/detalle" element={<Detalle favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
