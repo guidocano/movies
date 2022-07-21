@@ -63,7 +63,7 @@ function Register () {
 
     return (
         
-        <div className="container">
+        <div className="container users">
         {token && <Navigate to="/listado" />}
             <div className="row align-items-center justify-content-evenly">
                 

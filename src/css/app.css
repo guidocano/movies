@@ -11,3 +11,15 @@
     top: 10px;
     border:none;
 }
+
+.users {
+    margin-top: 20px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.movie-card{
+    margin-bottom: 10px;
+}

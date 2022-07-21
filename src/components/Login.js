@@ -43,14 +43,15 @@ function Login () {
                 const tokenRecibido = res.data["user-token"]
                 localStorage.setItem("token", tokenRecibido)
                 console.log(localStorage)
-                navigate("/listado");
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'top',
                     icon: 'success',
                     title: 'Welcome back.',
                     showConfirmButton: false,
                     timer: 1500
                   })
+                navigate("/listado");
+                
             })
             // .catch(swAlert(<div><h3>En error ocurred. Please try again.</h3></div>))
 
@@ -61,7 +62,7 @@ function Login () {
     
     return (
         
-        <div className="container">
+        <div className="container users">
         {token && <Navigate to="/listado" />}
             <div className="row align-items-center justify-content-evenly">
                 

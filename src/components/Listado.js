@@ -42,7 +42,7 @@ function Listado (props) {
         {
             moviesList.map((oneMovie) => {
                 return(
-                    <div className="col-3" key={oneMovie.id}>
+                    <div className="col-3 movie-card" key={oneMovie.id}>
                         <div className="card">
                             <img src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`} className="card-img-top" alt="movie poster" />
                             <button 

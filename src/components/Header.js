@@ -16,14 +16,15 @@ function Header (props) {
 
     const logOut = () => {
         localStorage.removeItem("token");
-        navigate("/")
+        
         Swal.fire({
-            position: 'top-end',
+            position: 'top',
             icon: 'info',
             title: 'Logged out.',
             showConfirmButton: false,
             timer: 1500
           })
+        navigate("/")
         // navigate(0);
     }
 
@@ -31,42 +32,49 @@ function Header (props) {
 
     return (
         <header>
-            <nav className="navbar navbar-expand-lg ">
-                <div className="container-fluid">
-                    <div className="collapse navbar-collapse">
-                        <ul className="navbar-nav">
-                            <img src={logos} className="logo-header" alt="home logo" />   
-                            <li className="nav-item">
-                                {!token &&
-                                    <Link className="nav-link login" to="/">Login</Link>
-                                }
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/listado">In Theaters</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/favoritos">Favorites&nbsp;
-                                <span className="favorites">
-                                    { token && <>({props.favorites.length})</> }
-                                </span>
-                                </Link>
-                                
-                            </li>
-                            <li className="nav-item d-flex align-items-center">
+            <nav>
+                <ul>
+                     
+                    <li>
+                        <img src={logos} className="logo-header" alt="home logo" />  
+                    </li>
+                    <li>
+                        {!token &&
+                            <Link className="login" to="/">Login</Link>
+                        }
+                    </li>
+                    <li>
+                        <Link to="/listado">In Theaters</Link>
+                    </li>
+                    <li>
+                        <Link  to="/favoritos">
+                        <span className="favs-big">Favorites&nbsp;</span>
+                        <span className="favs-small">Favs&nbsp;</span>
+                        <span className="favorites">
+                            { token && <>({props.favorites.length})</> }
+                        </span>
+                        </Link>
+                        
+                    </li>
+                    
+                    <li className="nav-right buscador">
+                        <Buscador/>
+                    </li>
 
-                            </li>
+                    <li className="nav-right">
+                        { token && <>                            
+                                <button className="logout nav-right" onClick={logOut}>Log Out</button>
+                            </> 
+                        }
+                    </li>
 
 
-                        </ul>
-                    </div>
-                    { token && <>                            
-                        <button className="nav-link logout" onClick={logOut}>Log Out</button> <span className="nav-link">&nbsp; |</span>
-                    </> 
-                    }
-                    <div></div>
-                    <Buscador/>
-                </div>
+
+                </ul>
+
+
             </nav>
+            
         </header>
     )
 }
