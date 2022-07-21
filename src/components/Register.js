@@ -41,10 +41,10 @@ function Register () {
                 email ,
                 password,
             })
-            .then(res => {
-                console.log(res)
+            .then(() => {
+                console.log("Registration succesfull.")
                 Swal.fire({
-                    title:'Registration successful!',
+                    title:'Registration succesfull!',
                     text: 'Please log in.',
                     confirmButtonColor: '#3085d6',
                 })

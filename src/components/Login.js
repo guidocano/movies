@@ -99,7 +99,7 @@ function Login () {
                             <Link className="text-danger" to="/register">here.</Link>
                         </span> <br/>
                         <span>Or log in as a guest: </span><br/>
-                        <span>user: guest@movie.com</span><br/>
+                        <span>user: guest@movies.com</span><br/>
                         <span>pass: guest</span>
                         </div>
             
