@@ -73,7 +73,7 @@ function Login () {
         
 
         
-            <div className="row align-items-center justify-content-evenly home users">
+            <div className="row align-items-center justify-content-evenly home users users2">
             {token && <Navigate to="/listado" />}    
                 
                 {/* <div className="col-6 users-logo">
@@ -99,15 +99,15 @@ function Login () {
                             
                             <br/>
                             <button className="btn btn-success mt-2" type="submit">Enter</button>
-
-                            
-                        </form>
-                        <br/>
+                            <br/>
                         <span>You can register&nbsp;
                             <Link className="text-danger" to="/register">here.</Link>
                         </span> <br/>
                         <span>Or sign in as a guest: </span>
                         <button onClick={guestComplete}>guest</button><br/>
+                            
+                        </form>
+
                         {/* <span>user: guest@movies.com</span><br/>
                         <span>pass: guest</span> */}
                         </div>

@@ -95,10 +95,10 @@ html {
         width: 100vw!important;
     }
 
-    .home {
+    .users2 {
         background-image: unset;
         background-color: #c7e0f6;
-        padding-top:300px!important;
+        padding-top:150px!important;
         margin: 0;
         position: absolute;
         top: 50%;
