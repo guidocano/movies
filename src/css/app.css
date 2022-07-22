@@ -3,6 +3,11 @@ html {
     margin-top: 80px;
 }
 
+body {
+    background-color: #c7e0f6;
+    
+}
+
 .listado, .favorites, .resultados, .detalle{
     margin-left: 20px;
     margin-right: 20px;
@@ -12,11 +17,12 @@ html {
 .home {
     width: 100%;
     height: 100%;
-    background-image: url("/src/assets/background7.jpg");
+    background-image: url("/src/assets/background9.jpg");
     background-size: cover;
     background-position: center;
     overflow: hidden;
     margin: 0!important;
+    background-color: #c7e0f6;
 }
 
 .users-logo2{
@@ -102,9 +108,12 @@ html {
         width: 100vw!important;
     }
 
-    .users2 {
-        background-image: unset;
+    .home {
+        background-image: url("/src/assets/background-sm.jpg");
         background-color: #c7e0f6;
+    }
+
+    .users2 {
         padding-top:150px!important;
         margin: 0;
         position: absolute;
@@ -129,6 +138,11 @@ html {
         padding-right: 2px;
     }
 
+    .col-8 {
+        padding-top:10px;
+        width: 100vw;
+    }
+ 
     .favs-card{
         width: 100%;
         padding-left: 2px;

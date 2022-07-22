@@ -31,7 +31,7 @@ function Detalle (props) {
     return (
         <>
             {!token && <Navigate to="/" />}
-            {!movie && <p>Loading...</p>}
+            {/* {!movie && <p>Loading...</p>} */}
             {movie && 
                 <>
 

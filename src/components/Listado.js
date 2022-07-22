@@ -58,7 +58,7 @@ function Listado (props) {
                             <div className="card-body">
                                 <h5 className="card-title movie-title">{oneMovie.title.substring(0, 30)}</h5>
                                 <p className="card-text">{oneMovie.overview.substring(0, 100)}...</p>
-                                <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">View more</Link>
+                                <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">Details</Link>
                             </div>
                         </div>
                     </div>
