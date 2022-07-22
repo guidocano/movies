@@ -2,7 +2,7 @@ import axios from "axios";
 import Swal from 'sweetalert2'
 import {useNavigate, Navigate, Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
-import logo from "../assets/home.jpg"
+import logo from "../assets/logo-t.png"
 
 function Login () {
 
@@ -65,29 +65,29 @@ function Login () {
     
     return (
         
-        <div className="container users">
-        {token && <Navigate to="/listado" />}
-            <div className="row align-items-center justify-content-evenly">
+
+        
+            <div className="row align-items-center justify-content-evenly home users">
+            {token && <Navigate to="/listado" />}    
                 
-                
-                <div className="col-6 users-logo">
+                {/* <div className="col-6 users-logo">
                     <Link to="/">
                         <img style={{maxWidth: "35vw"}} src={logo} alt="home logo" />    
                     </Link>
-                </div>
+                </div> */}
 
-                <div className="col-4 users-form">
-                    <h2>Login</h2>
+                <div className="users-form">
+                    <h2 className="section-title">LOGIN</h2>
 
                         <form onSubmit={submitHandler}>
                             <label>
-                                <span>Email:</span><br/>
+                                <span className="section-title">EMAIL</span><br/>
                                 <input type="text" name="email" />    
                             </label>
                             
                             <br/>
                             <label>
-                                <span>Password:</span><br/>
+                                <span className="section-title">PASSWORD</span><br/>
                                 <input type="password" name="password" />
                             </label>
                             
@@ -98,13 +98,13 @@ function Login () {
                         <span>You can register&nbsp;
                             <Link className="text-danger" to="/register">here.</Link>
                         </span> <br/>
-                        <span>Or log in as a guest: </span><br/>
+                        <span>Or sign in as a guest: </span><br/>
                         <span>user: guest@movies.com</span><br/>
                         <span>pass: guest</span>
                         </div>
             
             </div>
-        </div>
+
 
     )
 }

@@ -12,8 +12,9 @@ html {
 .home {
     width: 100%;
     height: 100%;
-    background-image: url("/src/assets/background6.jpg");
+    background-image: url("/src/assets/background7.jpg");
     background-size: cover;
+    background-position: center;
     overflow: hidden;
     margin: 0!important;
 }
@@ -23,6 +24,22 @@ html {
     margin-top: 30px;
     display:block;
     margin:auto;
+}
+
+.users-form input {
+    border: rgb(1, 131, 174) 1px solid;
+    border-radius: 5px;
+}
+
+.users-form input[type=text], .users-form input[type=password] {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+.users-form{
+   text-align: center; 
 }
 
 .welcome {
