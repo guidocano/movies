@@ -50,8 +50,10 @@ function App() {
     const btn = e.currentTarget;
     const parent = e.currentTarget.parentElement;
     const imgUrl = parent.querySelector("img").getAttribute("src");
-    const title = parent.querySelector("h5").innerText;
+    const title = parent.querySelector(".movie-title").innerText;
     const overview = parent.querySelector("p").innerText;
+
+ 
 
     const movieData = {
       imgUrl, title, overview,
@@ -81,7 +83,7 @@ function App() {
   return (
     <>
       <Header favorites={favorites}/>
-      <div className="container mt-3">
+
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
@@ -91,7 +93,7 @@ function App() {
           <Route path="/resultados" element={<Resultados favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/favoritos" element={<Favoritos favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
         </Routes>
-      </div>
+
       {/* <Footer /> */}
     </>
   );

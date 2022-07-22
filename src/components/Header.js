@@ -16,8 +16,6 @@ function Header (props) {
 
     const logOut = () => {
         localStorage.removeItem("token");
-        navigate("/")
-        navigate(0)
         Swal.fire({
             position: 'top',
             icon: 'info',
@@ -27,6 +25,9 @@ function Header (props) {
             width: '300px',
             toast: true
           })
+        navigate("/")
+        navigate(0)
+        
         // navigate(0);
     }
 
@@ -55,7 +56,7 @@ function Header (props) {
                         <Link  to="/favoritos">
                         <span className="favs-big">Favorites&nbsp;</span>
                         <span className="favs-small">Favs&nbsp;</span>
-                        <span className="favorites">
+                        <span className="favorites-num">
                             { token && <>({props.favorites.length})</> }
                         </span>
                         </Link>

@@ -84,7 +84,7 @@ function Register () {
                             <span>Name:</span><br/>
                             <input type="text" name="name" />    
                         </label>
-
+                        <br/>
                         <label>
                             <span>Email:</span><br/>
                             <input type="text" name="email" />    
@@ -102,7 +102,7 @@ function Register () {
 
                     <br/>
                     <span>
-                        Already have an user? Log in&nbsp;<Link className="text-danger" to="/">here.</Link>
+                        Already have an user? Log in&nbsp;<Link className="text-danger" to="/login">here.</Link>
                     </span>
                     <br/><br/>
                 </div>

@@ -36,9 +36,10 @@ function Listado (props) {
     return (
         <>
         {!token && <Navigate to="/login" />}
-        <h2>In Theaters</h2>
+        
+        <div className="row listado">
+        <h2 className="section-title">IN THEATERS</h2>
         <br/>
-        <div className="row">
         {
             moviesList.map((oneMovie) => {
                 return(
@@ -55,7 +56,7 @@ function Listado (props) {
                             </button>
                             
                             <div className="card-body">
-                                <h5 className="card-title">{oneMovie.title.substring(0, 30)}</h5>
+                                <h5 className="card-title movie-title">{oneMovie.title.substring(0, 30)}</h5>
                                 <p className="card-text">{oneMovie.overview.substring(0, 100)}...</p>
                                 <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">View more</Link>
                             </div>

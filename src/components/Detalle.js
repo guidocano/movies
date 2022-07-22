@@ -34,23 +34,29 @@ function Detalle (props) {
             {!movie && <p>Loading...</p>}
             {movie && 
                 <>
-                    <h2>Title: {movie.title}</h2>
-                    <br />
-                    <div className="row">
+
+                    <div className="row detalle">
+                        <h2 className="section-title">MOVIE DETAILS</h2>
+                        <br />
                         <div className="col-4">
+
                             <div className="card">
-                            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="img-fluid" alt="movie poster" />
-                            <button 
-                                    onClick={props.addRemoveFavs} 
-                                    className="favourite-btn"
-                                    data-movie-id={movie.id}>
-                                    {
-                                        props.favorites.find(element => element.id == movie.id ) ? <>❤️</>  : <>🤍</>
-                                    }
-                            </button>
+                                <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="img-fluid" alt="movie poster" />
+                                <button 
+                                        onClick={props.addRemoveFavs} 
+                                        className="favourite-btn"
+                                        data-movie-id={movie.id}>
+                                        {
+                                            props.favorites.find(element => element.id == movie.id ) ? <>❤️</>  : <>🤍</>
+                                        }
+                                </button>
+                                <p className="d-none">{movie.overview}</p>
+                                <h2 className="movie-title d-none">{movie.title.substring(0, 30)}</h2>
                             </div>
                         </div>
+
                         <div className="col-8">
+                            <h2 className="movie-title">{movie.title}</h2>
                             <h5>Release Date: {movie.release_date}</h5>
                             <h5>Overview: </h5>
                             <p>{movie.overview}</p>

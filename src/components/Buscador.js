@@ -25,13 +25,13 @@ function Buscador () {
     }
 
     return (
-            <form className="d-flex align-items-center" onSubmit={submitHandler}>
-                <label className="form-label mb-0 mx-2">
-                    <input className="form-control" type="text" name="keyword" placeholder="Movie Title..."/>    
-                </label>
+        <form className="d-flex align-items-center" onSubmit={submitHandler}>
+            <label className="form-label mb-0 mx-2">
+                <input className="form-control" type="text" name="keyword" placeholder="Movie Title..."/>    
+            </label>
 
-                <button className="btn btn-outline-light btn-search" type="submit">Search</button>
-            </form>
+            <button className="btn btn-outline-light btn-search" type="submit">Search</button>
+        </form>
     )
 }
 

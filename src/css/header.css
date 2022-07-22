@@ -7,7 +7,7 @@ nav {
     
 }
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 2px;
@@ -16,12 +16,12 @@ ul {
     height: 53px;
 }
 
-li {
+nav li {
     float: left;
 }
 
 
-li a:hover, li button:hover {
+nav li a:hover, nav li button:hover {
     float: left;
     color:white;
     text-shadow: 1px 1px 5px white;
@@ -61,7 +61,7 @@ li a, li button {
 
 
 
-.favorites {
+.favorites-num {
     color: rgb(197, 241, 176);
     /* font-weight: bold; */
     /* border: 1px white solid;

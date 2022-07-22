@@ -1,7 +1,7 @@
 import axios from "axios";
 import {Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
-import logo from "../assets/home.jpg"
+import logo from "../assets/logo-t.png"
 
 function Home () {
 
@@ -10,28 +10,25 @@ function Home () {
     const token = localStorage.getItem("token");
     
     return (
-        
-        <div className="container users">
-        {/* {token && <Navigate to="/listado" />} */}
-            <div className="row align-items-center justify-content-evenly">
-                
-                
-                <div className="col-6 users-logo">
-                    <Link to="/">
-                        <img style={{maxWidth: "35vw"}} src={logo} alt="home logo" />    
-                    </Link>
-                </div>
 
-                <div className="col-4 users-form">
-                    <h2>Home</h2>
-                    {token && <h5>Welcome back {name}</h5>}
+  
+
+                <div className="row align-items-center justify-content-evenly home users">
+                    
                     
 
-                        
+                        <Link to="/">
+                            <img className="users-logo2" src={logo} alt="home logo" />    
+                        </Link>
+
+
+                    {/* <div className="col-5 welcome">
+                        {!token && <h2 className="section-title">WELCOME!</h2>}
+                        {token && <><h2 className="section-title">WELCOME BACK </h2><h2 className="section-title">{name.toUpperCase()}!</h2></>}
+                    </div> */}
+                
                 </div>
-            
-            </div>
-        </div>
+
 
     )
 }

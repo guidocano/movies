@@ -37,10 +37,11 @@ function Resultados (props) {
 
     return (
         <>
-            <h2>Buscaste: <em>{keyword}</em></h2>
-            <br/>
-            {moviesResults.length === 0 && <h3>No results found.</h3>}
-            <div className="row">
+
+            <div className="row resultados">
+                <h2 className="section-title">SEARCH MOVIES: <em>{keyword}</em></h2>
+                <br/>
+                {moviesResults.length === 0 && <h3>No results found.</h3>}
                 {
                     moviesResults.map((oneMovie) => {
                         return(
