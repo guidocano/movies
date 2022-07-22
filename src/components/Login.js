@@ -8,17 +8,15 @@ function Login () {
 
     const navigate = useNavigate();
 
-    const guestComplete = e => {
+    const guestComplete = (e) => {
+        e.preventDefault();
+
         axios
         .post("https://awaitedsong.backendless.app/api/users/login",  {
             "login": "guest@movies.com",
             "password": "Guest123456",
         })
         .then(res => {
-            const tokenRecibido = res.data["user-token"]
-            const nameRecibido = res.data.name
-            localStorage.setItem("token", tokenRecibido)
-            localStorage.setItem("name", nameRecibido)
             Swal.fire({
                 position: 'top',
                 icon: 'success',
@@ -28,6 +26,11 @@ function Login () {
                 width: '300px',
                 toast: true
               })
+            const tokenRecibido = res.data["user-token"]
+            // const nameRecibido = res.data.name
+            localStorage.setItem("token", tokenRecibido)
+            // localStorage.setItem("name", nameRecibido)
+
             navigate("/listado");
             
         })
@@ -67,9 +70,9 @@ function Login () {
             })
             .then(res => {
                 const tokenRecibido = res.data["user-token"]
-                const nameRecibido = res.data.name
+                // const nameRecibido = res.data.name
                 localStorage.setItem("token", tokenRecibido)
-                localStorage.setItem("name", nameRecibido)
+                // localStorage.setItem("name", nameRecibido)
                 Swal.fire({
                     position: 'top',
                     icon: 'success',
