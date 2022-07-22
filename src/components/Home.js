@@ -15,8 +15,8 @@ function Home () {
                 <div className="row align-items-center justify-content-evenly home users">
                     
                     
-
-                        <Link to="/">
+                    <div className="users-logo2div">
+                        <Link to="/listado">
                             <img className="users-logo2" src={logo} alt="home logo" />    
                         </Link>                  
 
@@ -26,7 +26,8 @@ function Home () {
                         {!token && <h2 className="section-title">WELCOME!</h2>}
                         {token && <><h2 className="section-title">WELCOME BACK </h2><h2 className="section-title">{name.toUpperCase()}!</h2></>}
                     </div> */}
-                
+                    
+                    </div>
                 </div>
 
 
