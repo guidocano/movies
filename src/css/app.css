@@ -97,7 +97,11 @@ html {
 
     .home {
         background-image: unset;
-        background-color: #c7e0f6
+        background-color: #c7e0f6;
+        padding-top:200px!important;
+        margin: 0;
+        position: absolute;
+        top: 50%;
     }
 
     .users-logo2{

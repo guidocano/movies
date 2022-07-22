@@ -8,6 +8,12 @@ function Login () {
 
     const navigate = useNavigate();
 
+    const guestComplete = e => {
+        e.preventDefault();
+        console.log("guest pressed")
+        e.target.email.value = "hello"
+    }
+
     const submitHandler = e => {
         e.preventDefault();
 
@@ -93,14 +99,17 @@ function Login () {
                             
                             <br/>
                             <button className="btn btn-success mt-2" type="submit">Enter</button>
+
+                            
                         </form>
                         <br/>
                         <span>You can register&nbsp;
                             <Link className="text-danger" to="/register">here.</Link>
                         </span> <br/>
-                        <span>Or sign in as a guest: </span><br/>
-                        <span>user: guest@movies.com</span><br/>
-                        <span>pass: guest</span>
+                        <span>Or sign in as a guest: </span>
+                        <button onClick={guestComplete}>guest</button><br/>
+                        {/* <span>user: guest@movies.com</span><br/>
+                        <span>pass: guest</span> */}
                         </div>
             
             </div>
