@@ -19,7 +19,7 @@ function Register () {
         // eslint-disable-next-line no-useless-escape
         const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-        if(email === "" || password === "") {
+        if(email === "" || password === "" || name === "") {
             Swal.fire({
                 title:'Fields cannot be empty',
                 confirmButtonColor: '#3085d6',
@@ -54,6 +54,17 @@ function Register () {
                 navigate("/login");
 
             })
+            .catch((err)=> {
+                Swal.fire({
+                    title:'Try again.',
+                    text: err.response.data.message,
+                    confirmButtonColor: '#3085d6',
+                })
+            
+            })
+                
+            
+
             // .catch(swAlert(<div><h3>En error ocurred. Please try again.</h3></div>))
 
             

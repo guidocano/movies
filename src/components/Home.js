@@ -1,13 +1,12 @@
-import axios from "axios";
 import {Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
 import logo from "../assets/logo-t.png"
 
 function Home () {
 
-    const name = localStorage.getItem("name")
+    // const name = localStorage.getItem("name")
 
-    const token = localStorage.getItem("token");
+
     
     return (
 
@@ -19,7 +18,8 @@ function Home () {
 
                         <Link to="/">
                             <img className="users-logo2" src={logo} alt="home logo" />    
-                        </Link>
+                        </Link>                  
+
 
 
                     {/* <div className="col-5 welcome">

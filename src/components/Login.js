@@ -85,6 +85,15 @@ function Login () {
                 navigate("/listado");
                 
             })
+            .catch((err)=> {
+                console.log(err.response.data.message)
+                Swal.fire({
+                    title:'Try again.',
+                    text: err.response.data.message,
+                    confirmButtonColor: '#3085d6',
+                })
+            
+            })
             // .catch(swAlert(<div><h3>En error ocurred. Please try again.</h3></div>))
 
             
