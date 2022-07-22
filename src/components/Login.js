@@ -2,16 +2,36 @@ import axios from "axios";
 import Swal from 'sweetalert2'
 import {useNavigate, Navigate, Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
-import logo from "../assets/logo-t.png"
+
 
 function Login () {
 
     const navigate = useNavigate();
 
     const guestComplete = e => {
-        e.preventDefault();
-        console.log("guest pressed")
-        e.target.email.value = "hello"
+        axios
+        .post("https://awaitedsong.backendless.app/api/users/login",  {
+            "login": "guest@movies.com",
+            "password": "Guest123456",
+        })
+        .then(res => {
+            const tokenRecibido = res.data["user-token"]
+            const nameRecibido = res.data.name
+            localStorage.setItem("token", tokenRecibido)
+            localStorage.setItem("name", nameRecibido)
+            Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: 'Welcome back.',
+                showConfirmButton: false,
+                timer: 1400,
+                width: '300px',
+                toast: true
+              })
+            navigate("/listado");
+            
+        })
+
     }
 
     const submitHandler = e => {
@@ -100,13 +120,16 @@ function Login () {
                             <br/>
                             <button className="btn btn-success mt-2" type="submit">Enter</button>
                             <br/>
+                            <br/>
+                       
+                            
+                        </form>
+                        
                         <span>You can register&nbsp;
                             <Link className="text-danger" to="/register">here.</Link>
                         </span> <br/>
-                        <span>Or sign in as a guest: </span>
-                        <button onClick={guestComplete}>guest</button><br/>
-                            
-                        </form>
+                        <span>Or sign in as a </span>
+                        <button className="text-danger button-guest" onClick={guestComplete}>guest.</button><br/>
 
                         {/* <span>user: guest@movies.com</span><br/>
                         <span>pass: guest</span> */}

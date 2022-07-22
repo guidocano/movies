@@ -67,7 +67,7 @@ function Register () {
         
 
         
-            <div className="row align-items-center justify-content-evenly home users">
+            <div className="row align-items-center justify-content-evenly home users users2">
             {token && <Navigate to="/listado" />}    
                 
                 {/* <div className="col-6 users-logo">
