@@ -18,18 +18,16 @@ function Header (props) {
     const logOut = () => {
         localStorage.removeItem("token");
         navigate("/")
-        navigate(0)
         Swal.fire({
             position: 'top',
             icon: 'info',
             title: 'Logged out.',
             showConfirmButton: false,
-            timer: 1700,
+            timer: 1400,
             width: '300px',
             toast: true
           })
         
-        // navigate(0);
     }
 
 
