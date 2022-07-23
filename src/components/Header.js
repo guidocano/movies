@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 // components
 import Buscador from "./Buscador";
 import logos from "../assets/logo3.jpg"
+import logosm from "../assets/logo-sm.jpg"
 // styles
 import "../css/header.css"
 
@@ -16,17 +17,17 @@ function Header (props) {
 
     const logOut = () => {
         localStorage.removeItem("token");
+        navigate("/")
+        navigate(0)
         Swal.fire({
             position: 'top',
             icon: 'info',
             title: 'Logged out.',
             showConfirmButton: false,
-            timer: 1400,
+            timer: 1700,
             width: '300px',
             toast: true
           })
-        navigate("/")
-        navigate(0)
         
         // navigate(0);
     }
@@ -40,7 +41,8 @@ function Header (props) {
                      
                     <li>
                         <Link to="/">
-                            <img src={logos} className="logo-header" alt="home logo" />  
+                            <img src={logos} className="logo-header logo-big" alt="home logo" />  
+                            <img src={logosm} className="logo-header-small logo-small" alt="home logo" />  
                         </Link>
                         
                     </li>
@@ -51,6 +53,12 @@ function Header (props) {
                     </li>
                     <li>
                         <Link to="/listado">In Theaters</Link>
+                    </li>
+                    <li>
+                        <Link to="/upcoming">
+                            <span className="coming-big">Coming Soon&nbsp;</span>
+                            <span className="coming-small">Upcoming&nbsp;</span>
+                        </Link>
                     </li>
                     <li>
                         <Link  to="/favoritos">

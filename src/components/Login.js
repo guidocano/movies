@@ -140,8 +140,8 @@ function Login () {
                         <span>You can register&nbsp;
                             <Link className="text-danger" to="/register">here.</Link>
                         </span> <br/>
-                        <span>Or sign in as a </span>
-                        <button className="text-danger button-guest" onClick={guestComplete}>guest.</button><br/>
+                        <span><strong>Or sign in as a </strong></span>
+                        <button className="text-danger button-guest" onClick={guestComplete}><strong>guest.</strong></button><br/>
 
                         {/* <span>user: guest@movies.com</span><br/>
                         <span>pass: guest</span> */}

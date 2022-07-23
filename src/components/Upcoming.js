@@ -3,7 +3,7 @@ import  { useEffect, useState} from "react";
 import axios from "axios";
 import swAlert from '@sweetalert/with-react';
 
-function Listado (props) {
+function Upcoming (props) {
 
     let token = localStorage.getItem("token");
 
@@ -18,12 +18,12 @@ function Listado (props) {
     
 
     useEffect(() => {
-        // const endPoint = "https://api.themoviedb.org/3/discover/movie?api_key=7acbc6a0e91987e8ec8d8e365b57a1c7&language=en-US&page=1";
-        const endPoint = "https://api.themoviedb.org/3/movie/now_playing?api_key=7acbc6a0e91987e8ec8d8e365b57a1c7&language=en-US&page=1";
+        const endPoint = "https://api.themoviedb.org/3/movie/upcoming?api_key=7acbc6a0e91987e8ec8d8e365b57a1c7&language=en-US&page=1";
         axios.get(endPoint)
             .then(response => {
                 const apiData = response.data;
                 setMoviesList(apiData.results)
+                console.log(apiData.results)
             })
             .catch(error => 
                 swAlert(<h2>Technical Difficulties. Try again later.</h2>))
@@ -39,7 +39,7 @@ function Listado (props) {
         {!token && <Navigate to="/login" />}
         
         <div className="row listado">
-        <h2 className="section-title">NOW IN THEATERS</h2>
+        <h2 className="section-title">COMING SOON</h2>
         <br/>
         {
             moviesList.map((oneMovie) => {
@@ -58,6 +58,7 @@ function Listado (props) {
                             
                             <div className="card-body">
                                 <h5 className="card-title movie-title">{oneMovie.title.substring(0, 30)}</h5>
+                                <h6>Release Date: {oneMovie.release_date}</h6>
                                 <p className="card-text">{oneMovie.overview.substring(0, 100)}...</p>
                                 <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">Details</Link>
                             </div>
@@ -75,4 +76,4 @@ function Listado (props) {
     )
 }
 
-export default Listado
+export default Upcoming

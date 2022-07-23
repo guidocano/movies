@@ -59,6 +59,10 @@ li a, li button {
     margin-top:-8px;
 }
 
+.logo-header-small {
+    width: 43px;
+    margin-top:-8px;
+}
 
 
 .favorites-num {
@@ -70,7 +74,7 @@ li a, li button {
     /* text-shadow: 1px 1px 5px white; */
 }
 
-.favs-small{
+.logo-small, .favs-small, .coming-small{
     display: none;
 }
 
@@ -111,13 +115,15 @@ li a, li button {
         margin-top:-8px;
     }
 
-    .favs-big{
+    .logo-big, .coming-big, .favs-big{
         display: none;
     }
 
-    .favs-small{
+    .logo-small, .coming-small, .favs-small{
         display: initial;
     }
+
+
 
     .buscador{
         display: none;

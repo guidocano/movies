@@ -6,6 +6,7 @@ import {Routes, Route} from "react-router-dom";
 // Components
 import Home from "./components/Home";
 import Listado from "./components/Listado"
+import Upcoming from "./components/Upcoming"
 import Detalle from "./components/Detalle"
 import Favoritos from "./components/Favoritos"
 import Resultados from "./components/Resultados"
@@ -89,6 +90,7 @@ function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/listado" element={<Listado favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
+          <Route path="/upcoming" element={<Upcoming favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/detalle" element={<Detalle favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/resultados" element={<Resultados favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
           <Route path="/favoritos" element={<Favoritos favorites={favorites} addRemoveFavs={addRemoveFavs}/>}/>
