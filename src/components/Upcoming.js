@@ -23,7 +23,6 @@ function Upcoming (props) {
             .then(response => {
                 const apiData = response.data;
                 setMoviesList(apiData.results)
-                console.log(apiData.results)
             })
             .catch(error => 
                 swAlert(<h2>Technical Difficulties. Try again later.</h2>))

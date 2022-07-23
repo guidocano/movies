@@ -1,18 +1,18 @@
 import {useEffect, useState} from "react";
-import {Link, useSearchParams} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import axios from "axios";
 import Swal from 'sweetalert2'
 
 function Resultados (props) {
-
-    const searchParams = useSearchParams()
+    const location = useLocation()
+    const searchParams = new URLSearchParams(location.search)
 
     const token = localStorage.getItem("token")
 
     const key = "7acbc6a0e91987e8ec8d8e365b57a1c7"
 
-    const query = new URLSearchParams(window.location.search);
-    const keyword = query.get("keyword")
+    // const query = new URLSearchParams(window.location.search);
+    const keyword = searchParams.get("keyword")
 
 
     const [moviesResults, setMoviesResults] = useState([])

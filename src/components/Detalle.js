@@ -1,13 +1,20 @@
 import {useEffect, useState} from "react";
 import {Navigate} from "react-router-dom";
 import axios from "axios"
+import { useLocation } from 'react-router-dom'
 
 function Detalle (props) {
+
+    const location = useLocation()
+    const searchParams = new URLSearchParams(location.search);
+    let movieID = searchParams.get("movieID")
+
     
     let token = localStorage.getItem("token")
 
-    let query = new URLSearchParams(window.location.search);
-    let movieID = query.get("movieID")
+    // let query = new URLSearchParams(window.location.search);
+    // let movieID = query.get("movieID")
+
 
     const [movie, setMovie] = useState(null);
 
