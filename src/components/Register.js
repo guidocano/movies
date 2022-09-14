@@ -36,7 +36,7 @@ function Register () {
         }
 
         axios
-            .post("https://stateball.backendless.app/api/users/register", {
+            .post("https://darlingprose.backendless.app/api/users/register", {
                 name,
                 email ,
                 password,

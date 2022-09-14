@@ -30,9 +30,6 @@ function Listado (props) {
     
     }, [setMoviesList]);
 
-    // console.log(moviesList)
-    // console.log(props.favorites)
-
 
     return (
         <>
