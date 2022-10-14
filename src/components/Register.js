@@ -36,7 +36,7 @@ function Register () {
         }
 
         axios
-            .post("https://darlingprose.backendless.app/api/users/register", {
+            .post("https://seemlyexistence.backendless.app/api/users/register", {
                 name,
                 email ,
                 password,
