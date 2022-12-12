@@ -36,7 +36,7 @@ function Register () {
         }
 
         axios
-            .post("https://poeticshade.backendless.app/api/users/register", {
+            .post("https://coolcactus.backendless.app/api/users/register", {
                 name,
                 email ,
                 password,
