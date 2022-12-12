@@ -2,7 +2,6 @@ import axios from "axios";
 import Swal from 'sweetalert2'
 import {useNavigate, Navigate, Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
-import logo from "../assets/logo-t.png"
 
 
 function Register () {

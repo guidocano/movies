@@ -3,7 +3,6 @@ import Swal from 'sweetalert2'
 import {useNavigate, Navigate, Link} from "react-router-dom";
 import "../css/bootstrap.min.css"
 
-
 function Login () {
 
     const navigate = useNavigate();
