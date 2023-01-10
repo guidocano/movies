@@ -35,7 +35,7 @@ function Register () {
         }
 
         axios
-            .post("https://coolcactus.backendless.app/api/users/register", {
+            .post("https://magicalroad.backendless.app/api/users/register", {
                 name,
                 email ,
                 password,

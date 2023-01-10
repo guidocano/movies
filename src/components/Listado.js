@@ -8,14 +8,7 @@ function Listado (props) {
     let token = localStorage.getItem("token");
 
     const [moviesList, setMoviesList] = useState([]);
-
-    // useEffect(() => {
-    //     token = localStorage.getItem("token")
-    //     if(token === null) {
-    //         navigate('/');
-    //     }
-    // }, [navigate]);
-    
+   
 
     useEffect(() => {
         // const endPoint = "https://api.themoviedb.org/3/discover/movie?api_key=7acbc6a0e91987e8ec8d8e365b57a1c7&language=en-US&page=1";

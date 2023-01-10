@@ -11,7 +11,7 @@ function Login () {
         e.preventDefault();
 
         axios
-        .post("https://coolcactus.backendless.app/api/users/login",  {
+        .post("https://magicalroad.backendless.app/api/users/login",  {
             "login": "guest@movies.com",
             "password": "Guest123456",
         })
@@ -63,7 +63,7 @@ function Login () {
 
 
         axios
-            .post("https://coolcactus.backendless.app/api/users/login",  {
+            .post("https://magicalroad.backendless.app/api/users/login",  {
                 login ,
                 password,
             })
