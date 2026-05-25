@@ -11,7 +11,7 @@ function Login () {
         e.preventDefault();
 
         axios
-        .post("https://magicalroad.backendless.app/api/users/login",  {
+        .post("https://todayrobin-us.backendless.app/api/users/login",  {
             "login": "guest@movies.com",
             "password": "Guest123456",
         })
@@ -63,7 +63,7 @@ function Login () {
 
 
         axios
-            .post("https://magicalroad.backendless.app/api/users/login",  {
+            .post("https://todayrobin-us.backendless.app/api/users/login",  {
                 login ,
                 password,
             })
@@ -105,13 +105,8 @@ function Login () {
 
         
             <div className="row align-items-center justify-content-evenly home users users2">
-            {token && <Navigate to="/listado" />}    
-                
-                {/* <div className="col-6 users-logo">
-                    <Link to="/">
-                        <img style={{maxWidth: "35vw"}} src={logo} alt="home logo" />    
-                    </Link>
-                </div> */}
+            {token && <div>User correct</div>}    
+            
 
                 <div className="users-form">
                     <h2 className="section-title">LOGIN</h2>
@@ -142,8 +137,6 @@ function Login () {
                         <span><strong>Or sign in as a </strong></span>
                         <button className="text-danger button-guest" onClick={guestComplete}><strong>guest.</strong></button><br/>
 
-                        {/* <span>user: guest@movies.com</span><br/>
-                        <span>pass: guest</span> */}
                         </div>
             
             </div>

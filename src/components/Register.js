@@ -6,6 +6,8 @@ import "../css/bootstrap.min.css"
 
 function Register () {
 
+    //https://develop.backendless.com/app/cinema/manage/settings/app-info
+
     const navigate = useNavigate();
 
     const submitHandler = e => {
@@ -35,7 +37,8 @@ function Register () {
         }
 
         axios
-            .post("https://magicalroad.backendless.app/api/users/register", {
+            //.post("https://magicalroad.backendless.app/api/users/register", {
+            .post("https://todayrobin-us.backendless.app/api/users/register", {
                 name,
                 email ,
                 password,
