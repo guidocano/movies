@@ -14,48 +14,6 @@ body {
     margin-bottom: 20px;
 }
 
-.home {
-    width: 100%;
-    height: 100%;
-    background-image: url("/src/assets/background9.jpg");
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    margin: 0!important;
-    background-color: #c7e0f6;
-}
-
-.users-logo2div{
-    width: fit-content
-}
-
-.users-logo2{
-    height: 75vh;
-    margin-top: 30px;
-    display:block;
-    margin:auto;
-}
-
-.users-form input {
-    border: rgb(1, 131, 174) 1px solid;
-    border-radius: 5px;
-}
-
-.users-form input[type=text], .users-form input[type=password] {
-    width: 100%;
-    padding: 8px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-  }
-
-.users-form{
-   text-align: center; 
-}
-
-.welcome {
-    margin-top: -100px;
-}
-
 .favourite-btn {
     width: 30px;
     height: 30px;
@@ -70,23 +28,15 @@ body {
     border:none;
 }
 
-.users {
-    margin-top: 20px;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-.button-guest{
-    padding: 0;
-    border: none;
-    background: none;
-    text-decoration: underline;
-}
-
-.movie-card{
+.movie-card, .favs-card {
     margin-bottom: 10px;
+}
+
+/* Same poster size on every card, even if the image is missing */
+.card-img-top {
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background-color: #e9ecef;
 }
 
 .section-title{
@@ -100,40 +50,8 @@ body {
 
 @media screen and (max-width: 640px) {
 
-    .welcome{
-        display: none;
-    }
-    
-    .users-logo{
-        display: none;
-    }
-
     .col-4{
         width: 100vw!important;
-    }
-
-    .home {
-        background-image: url("/src/assets/background-sm.jpg");
-        background-color: #c7e0f6;
-    }
-
-    .users2 {
-        padding-top:150px!important;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-    }
-
-    .users-logo2{
-        width: 80vw;
-        height: auto;
-    }
-
-    .users-form{
-        width: 50%;
-        margin: 0px auto 100px auto;
-        padding-left: 0;
-        text-align: center;
     }
 
     .movie-card {
